@@ -29,8 +29,9 @@ import com.tuenti.videorecorderservice.TuentiScreenRecorder;
 import com.tuenti.videorecorderservice.log.Log4JTypeListener;
 
 public class VideoRecorderModule extends ServletModule {
-
-	private static final int MAX_RECORDING_TIME_SECS = 120000;
+  
+  /* Change here from 120000 to 500000 so 2 mins to 10 mins */
+	private static final int MAX_RECORDING_TIME_SECS = 500000;
 	private static final int FRAME_RATE_PER_SEC = 10;
 	private static final int BIT_DEPTH = 16;
 	private static final float QUALITY_RATIO = 0.97f;

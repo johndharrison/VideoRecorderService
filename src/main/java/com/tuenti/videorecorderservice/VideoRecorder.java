@@ -80,4 +80,15 @@ public class VideoRecorder {
 		return Response.status(responseCode).build();
 	}
 
+  @SuppressWarnings("UnusedReturnValue")
+	@GET
+	@Path("/closeserver")
+	public Response closeserver() {
+		logger.info("Closing Server....");
+		int responseCode = HttpURLConnection.HTTP_OK;
+		System.exit(0);
+
+		return Response.status(responseCode).build();
+	}
+
 }

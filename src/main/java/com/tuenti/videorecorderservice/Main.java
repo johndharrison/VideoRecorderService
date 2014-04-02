@@ -47,8 +47,17 @@ public class Main extends GuiceServletContextListener {
 
 	public static void main(String[] args) throws IOException {
 		HttpServer httpServer = new Main().startServer();
-		System.in.read();
-		httpServer.stop();
+  	/*System.in.read();*/
+    try {
+		        Object lock = new Object();
+ 			        synchronized (lock) {
+		            while (true) {
+		                lock.wait();
+		            }
+		          }
+		      } catch (InterruptedException ex) {
+		    }		
+    httpServer.stop();
 	}
 
 	String getVideoFolderPath() {
